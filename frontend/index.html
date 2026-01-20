@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drug–Gene–SideEffect Explorer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <noscript>
+        <p style="color: red; text-align: center;">⚠️ JavaScript is required for this app to work properly.</p>
+    </noscript>
+
+    <div class="container">
+        <h1>🔍 Drug–Gene–SideEffect Explorer</h1>
+        
+        <input 
+            type="text" 
+            id="searchBox" 
+            placeholder="Type the drug's name..." 
+            autocomplete="off"
+        >
+
+        <ul id="suggestions" class="suggestion-list"></ul>
+        
+        <div id="results" class="results-box"></div>
+
+        <!-- ✅ Download button added here -->
+        <button id="downloadBtn" style="display: none; margin-top: 15px;">
+            ⬇️ Download Info (CSV)
+        </button>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
