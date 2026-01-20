@@ -1,34 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Drug–Gene–SideEffect Explorer</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Google Fonts: Outfit (Headings) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css?v=2">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
+    <div class="background-elements">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+
     <noscript>
-        <p style="color: red; text-align: center;">⚠️ JavaScript is required for this app to work properly.</p>
+        <p style="color: #ff4d4d; text-align: center; font-weight: 600;">⚠️ JavaScript is required for this app to work
+            properly.</p>
     </noscript>
 
-    <div class="container">
-        <h1>🔍 Drug–Gene–SideEffect Explorer</h1>
-        
-        <input 
-            type="text" 
-            id="searchBox" 
-            placeholder="Type the drug's name..." 
-            autocomplete="off"
-        >
+    <div class="container glass-panel">
+        <header>
+            <div class="logo-area">
+                <span class="icon">🧬</span>
+            </div>
+            <h1>Drug Explorer</h1>
+            <p class="subtitle">Discover Gene Interactions & Side Effects</p>
+
+            <details class="about-section">
+                <summary>About this App</summary>
+                <div class="about-content">
+                    <p>This tool uses a <strong>Graph Neural Network</strong> model to find relationships between drugs,
+                        affected genes, and potential side effects.</p>
+                    <p>Type a drug name below to explore its connectivity in our knowledge graph.</p>
+                </div>
+            </details>
+        </header>
+
+        <div class="search-wrapper">
+            <input type="text" id="searchBox" placeholder="Search for a drug (e.g. Aspirin)..." autocomplete="off">
+            <div class="search-icon">🔍</div>
+        </div>
 
         <ul id="suggestions" class="suggestion-list"></ul>
-        
+
         <div id="results" class="results-box"></div>
 
-        <!-- ✅ Download button added here -->
-        <button id="downloadBtn" style="display: none; margin-top: 15px;">
-            ⬇️ Download Info (CSV)
+        <button id="downloadBtn" class="btn-download" style="display: none;">
+            <span class="icon">⬇️</span> Download Report
         </button>
+
+        <footer class="app-footer">
+            <a href="https://github.com/remilsalim" target="_blank" rel="noopener noreferrer">
+                <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor">
+                    <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                    </path>
+                </svg>
+                <span>remilsalim</span>
+            </a>
+        </footer>
     </div>
 
     <script src="js/main.js"></script>

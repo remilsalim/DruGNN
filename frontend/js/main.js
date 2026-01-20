@@ -64,20 +64,24 @@ document.addEventListener("DOMContentLoaded", () => {
         downloadBtn.style.display = "inline-block";
 
         const sideEffects = data.side_effects.length
-          ? `<ul>${data.side_effects
-              .map((se) => `<li>${se}</li>`)
-              .join("")}</ul>`
-          : "<p>None found.</p>";
+          ? `<ul class="tag-list side-effects">${data.side_effects
+            .map((se) => `<li>${se}</li>`)
+            .join("")}</ul>`
+          : "<p class='no-data'>None found.</p>";
 
         const genes = data.genes.length
-          ? `<ul>${data.genes.map((g) => `<li>${g}</li>`).join("")}</ul>`
-          : "<p>None found.</p>";
+          ? `<ul class="tag-list genes">${data.genes.map((g) => `<li>${g}</li>`).join("")}</ul>`
+          : "<p class='no-data'>None found.</p>";
 
         results.innerHTML = `
-                    <h3>💊 Side Effects (${data.side_effects.length})</h3>
-                    ${sideEffects}
-                    <h3>🧬 Affected Genes (${data.genes.length})</h3>
-                    ${genes}
+                    <div class="result-section">
+                        <h3>💊 Side Effects <span class="count">(${data.side_effects.length})</span></h3>
+                        ${sideEffects}
+                    </div>
+                    <div class="result-section">
+                        <h3>🧬 Affected Genes <span class="count">(${data.genes.length})</span></h3>
+                        ${genes}
+                    </div>
                 `;
       })
       .catch((err) => {

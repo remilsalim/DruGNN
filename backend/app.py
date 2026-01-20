@@ -53,7 +53,8 @@ def drug_info():
         if edge_type == "drug-se":
             side_effects.append(label)
         elif edge_type == "drug-gene":
-            genes.append(label)
+            if not label.startswith("ENSG00"):
+                genes.append(label)
 
     return jsonify({
         "side_effects": sorted(side_effects),
