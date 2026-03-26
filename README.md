@@ -1,4 +1,4 @@
-﻿# Drug–Gene–SideEffect Explorer 🧬
+# Drug–Gene–SideEffect Explorer 🧬
 
 A powerful graph-based explorer for discovering relationships between drugs, genes, and side effects. Enter a drug name to instantly visualizes its known side effects and affected genes using a pre-trained graph neural network model.
 
@@ -50,6 +50,10 @@ A powerful graph-based explorer for discovering relationships between drugs, gen
 
 **Remil Salim**
 -   [GitHub](https://github.com/remilsalim)
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 *Built with passion for data and design.*
